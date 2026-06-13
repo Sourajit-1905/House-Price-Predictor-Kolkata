@@ -3,9 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kolkata Property Valuation Dashboard | Business Portal</title>
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
-    work will begin shortly
+
+    <header class="site-header">
+        <div class="header-container">
+            <div class="brand-identity">
+                <span class="brand-logo">📊</span>
+                <span class="brand-name">KolkataEstates<span class="accent-text">.AI</span></span>
+            </div>
+            <nav class="nav-links">
+                <a href="#" class="active">Valuation Engine</a>
+                <a href="#">Market Insights</a>
+                <a href="#">Enterprise Solutions</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="dashboard-wrapper">
+        <div class="glass-panel">
+            
+            <header class="panel-header">
+                <h2>Real-Time Market Valuation Suite</h2>
+                <p>Enterprise-grade predictive modeling engine configured natively for Kolkata's real estate ecosystem.</p>
+            </header>
+
+            <form id="prediction-form">
+                <div class="inputs-row">
+                    
+                    <div class="input-group">
+                        <label for="sqft">Built-Up Area (Sq.Ft.)</label>
+                        <div class="input-wrapper">
+                            <input 
+                                type="number" 
+                                id="sqft" 
+                                name="sqft" 
+                                placeholder="e.g., 1450" 
+                                min="100" 
+                                step="1" 
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="bhk">Room Layout (BHK)</label>
+                        <div class="input-wrapper">
+                            <input 
+                                type="number" 
+                                id="bhk" 
+                                name="bhk" 
+                                placeholder="e.g., 3" 
+                                min="1" 
+                                max="10" 
+                                step="1" 
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="location">Target Neighborhood</label>
+                        <div class="input-wrapper">
+                            <select id="location" name="location" required>
+                                <option value="" disabled selected>Loading locations...</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="action-row">
+                    <button type="submit" class="predict-btn">Compute Market Value</button>
+                </div>
+
+                <div id="result-section" class="result-card hidden">
+                    <div class="result-meta">
+                        <p class="meta-title">Calculated Valuation Estimate</p>
+                        <p class="meta-subtitle">Based on machine learning tree node feature splits</p>
+                    </div>
+                    <div class="result-valuation">
+                        <h2 id="price-output">₹ 0.00 Cr</h2>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 KolkataEstates.AI. All algorithmic models proprietary.</p>
+            <div class="footer-meta-links">
+                <a href="#">Data Privacy</a>
+                <a href="#">API Specifications</a>
+                <a href="#">Model Architecture</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../static/app.js"></script>
 </body>
 </html>
