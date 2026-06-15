@@ -3,6 +3,8 @@ import pickle
 import pandas as pd
 from flask import Flask, request, jsonify, render_template
 
+from locations import location_names
+
 app = Flask(__name__)
 
 PROJECT_ROOT = r"C:\Users\Biswajit\Desktop\SP49\AI & ML\Projects\Kolkata_House_Price_Predictor"
@@ -26,50 +28,7 @@ def get_locations_from_dataset():
         return sorted([loc for loc in locations if isinstance(loc, str)])
     except Exception as e:
         print(f"Error reading dataset: {e}")
-        return sorted(['Ballygunge', 'Barrackpore', 'Santoshpur', 'Sarsuna',
-       'Madhyamgram', 'Thakurpukur', 'Rajpur', 'North Dum Dum',
-       'Dhakuria', 'Shyambazar', 'Nazirabad', 'Joka', 'Kasba', 'Barisha',
-       'Behala', 'Taratala', 'Jodhpur Park', 'Salt Lake City', 'New Town',
-       'Mohispota', 'Maheshtala', 'Naihati', 'Birati', 'Amtala',
-       'Gariahat', 'New Barrakpur', 'Rajpur Sonarpur', 'Khardah',
-       'Belghoria', 'Sodepur', 'Baghbazar', 'Baghajatin', 'Nimta',
-       'Lake Gardens', 'Khidirpur', 'Kolutolla', 'Baguiati',
-       'Diamond Harbour', 'Bantala', 'Tollygunge', 'Sinthi', 'Beliaghata',
-       'Kamardanga', 'Netaji Nagar', 'Garia', 'Rajarhat', 'Kalikapur',
-       'East Kolkata Township', 'Tangra', 'Bhowanipore', 'Bansdroni',
-       'Kalighat', 'Ichapur', 'Mukundapur', 'Bramhapur', 'Hussainpur',
-       'Berunanpukhuria', 'Kolkata', 'Bhatpara', 'Keshtopur',
-       'Chinar Park', 'Baguihati', 'New Alipore', 'Kamdahari',
-       'Paschim Putiary', 'Ganguly Bagan', 'Kaikhali', 'Garden Reach',
-       'Picnic Garden', 'Haltu', 'Raghunathpur',
-       'Baishnabghata Patuli Township', 'Srirampur', 'Agarpara',
-       'Taltala', 'Entally', 'Purba Barisha', 'Dum Dum', 'Lake Town',
-       'Ariadaha', 'Elgin', 'Purba Putiary', 'VIP Nagar', 'Barasat',
-       'Jadavpur', 'Paschim Barisha', 'Alipore', 'Pailan', 'Garfa',
-       'Shyamnagar', 'Ward No 113', 'Tagore Park', 'Sarada Pally',
-       'Hanspukuria', 'Golf Green', 'Panchpota', 'Nayabad', 'Bijoygarh',
-       'Kabardanga', 'Bow Bazaar', 'South Dum Dum', 'Dum Dum Cantonment',
-       'Kamalgazi', 'Dakshin Gobindopur', 'Pancha Sayar', 'Beniapukur',
-       'Kalagachhia', 'Chitpur', 'Rajabagan', 'Kalyan Nagar', 'Bangaon',
-       'Champahati', 'Natagarh', 'Cossipore', 'Machuabazar', 'Habra',
-       'Sewli Telinipara', 'Topsia', 'Kashipur', 'Shobhabazar',
-       'Ashokgarh', 'Duttapukur', 'Bagnan', 'Park Street Area', 'Kalyani',
-       'Budge Budge', 'Panihati', 'Narendrapur', 'Chowbaga', 'Saha Para',
-       'Bamangachhi', 'Thakuranir Chak', 'Tala', 'Bamunpara', 'Paikpara',
-       'Jorabagan', 'Krishnanagar', 'Maniktala', 'Regent Park',
-       'Belgachia', 'Mominpore', 'Rahara', 'Bishnupur', 'Talbanda',
-       'Bira', 'Barabazar Market', 'Bhatenda', 'Jorasanko', 'Khariberia',
-       'Bagmari', 'Adarsha Nagar', 'Malickpur', 'Dunlop', 'Hedua',
-       'Baranagar', 'Pansila', 'Garulia', 'Rania', 'College Square',
-       'Chandpara', 'Kokapur', 'Bagpota', 'Dakshineswar', 'Beniatola',
-       'Jugberia', 'Badartala', 'Hridaypur', 'Nabapally', 'Halisahar',
-       'Airport', 'Tiljala', 'Natunhat', 'Palta', 'Baruipur', 'Fatepur',
-       'Jagatipota', 'Naoabad', 'Sovabazar', 'Patipukur',
-       'Aurobindo Park', 'Ramchandrapur', 'Gobra', 'Baruipur P',
-       'Metiabruz', 'Vedic Village', 'Kanchrapara Loco', 'Basirhat',
-       'Malancha Mahi Nagar', 'Kazipara', 'Kustia', 'Doperia Village',
-       'Raja Bazar', 'Ruiya', 'Baithakkhana', 'Uttarbhag', 'Bow Barracks',
-       'Abdalpur', 'Ultadanga', 'Maidan', 'Narayantala', 'Kankurgachi'])
+        return location_names
 
 @app.route('/')
 def home():
