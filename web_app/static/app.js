@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const location = document.getElementById("location").value;
 
         const originalBtnText = submitBtn.innerText;
-        submitBtn.innerText = "PROCESSING MATRIX MODEL...";
+        submitBtn.innerText = "Compute Market Value";
         submitBtn.disabled = true;
 
         try {
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const location = document.getElementById("location").value;
 
         const originalBtnText = submitBtn.innerText;
-        submitBtn.innerText = "PROCESSING MATRIX MODEL...";
+        submitBtn.innerText = "Compute Market Value";
         submitBtn.disabled = true;
 
         try {

@@ -19,10 +19,10 @@ body {
 
 /* --- THE GLASSY HEADER --- */
 .site-header {
-    background: rgba(255, 255, 255, 0.3); /* Highly transparent white */
-    backdrop-filter: blur(16px); /* Watery blur */
+    background: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(16px); 
     -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5); /* Frosty edge reflection */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5); 
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -51,11 +51,11 @@ body {
     font-size: 1.25rem;
     font-weight: 700;
     letter-spacing: -0.5px;
-    color: #212529; /* Dark text for contrast */
+    color: #212529; 
 }
 
 .accent-text {
-    color: #0088cc; /* Darker accent cyan for light background */
+    color: #0088cc; 
 }
 
 .nav-links {
@@ -64,7 +64,7 @@ body {
 }
 
 .nav-links a {
-    color: #444; /* Dark gray text */
+    color: #444; 
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 600;
@@ -75,6 +75,7 @@ body {
     color: #0088cc;
 }
 
+/* --- DASHBOARD WRAPPER --- */
 .dashboard-wrapper {
     flex: 1;
     display: flex;
@@ -83,19 +84,136 @@ body {
     padding: 40px 24px;
 }
 
-/* --- THE GLASSY MAIN BODY --- */
+/* --- LANDING / HERO WRAPPER (DIRECT BACKGROUND) --- */
+.landing-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 24px;
+}
+
+.hero-content-direct {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(0, 136, 204, 0.1);
+    color: #0088cc;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(0, 136, 204, 0.2);
+}
+
+.hero-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    color: #212529;
+    margin-bottom: 24px;
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.4);
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #00d4ff, #0088cc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    color: #4a5568;
+    line-height: 1.6;
+    font-weight: 500;
+    max-width: 660px;
+    margin: 0 auto 40px auto;
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.5);
+}
+
+/* --- CTA BUTTON --- */
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 36px;
+    background: linear-gradient(135deg, #00d4ff, #0088cc);
+    border: none;
+    border-radius: 30px;
+    color: #fff; 
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 136, 204, 0.3);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 136, 204, 0.5);
+}
+
+.cta-btn:hover .arrow-icon {
+    transform: translateX(6px);
+}
+
+.arrow-icon {
+    transition: transform 0.3s ease;
+}
+
+/* --- THE GLASSY PANEL --- */
 .glass-panel {
     width: 100%;
     max-width: 950px; 
     padding: 40px;
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.25); /* High transparency */
-    backdrop-filter: blur(25px); /* Deep watery blur */
+    background: rgba(255, 255, 255, 0.25); 
+    backdrop-filter: blur(25px); 
     -webkit-backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 0.8); /* Sharp white edge */
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1); /* Soft shadow for floating effect */
+    border: 1px solid rgba(255, 255, 255, 0.8); 
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1); 
 }
 
+/* --- SMOOTH PAGE LOADING TRANSITIONS --- */
+.animated-element {
+    opacity: 0;
+    transform: translateY(25px);
+    animation: smoothReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.page-transition {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: smoothReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.25s; }
+.delay-3 { animation-delay: 0.4s; }
+.delay-4 { animation-delay: 0.55s; }
+
+@keyframes smoothReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- DASHBOARD SPECIFIC STYLES --- */
 .panel-header {
     margin-bottom: 35px;
     text-align: left;
@@ -145,11 +263,10 @@ label {
     width: 100%;
 }
 
-/* Make input fields slightly glassy as well */
 input[type="number"], select {
     width: 100%;
     padding: 14px 16px;
-    background: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    background: rgba(255, 255, 255, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.7);
     border-radius: 8px;
     color: #333;
@@ -189,7 +306,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .predict-btn {
     width: 100%;
     padding: 16px;
-    background: linear-gradient(135deg, #00d4ff, #0088cc); /* Sleek gradient */
+    background: linear-gradient(135deg, #00d4ff, #0088cc);
     border: none;
     border-radius: 8px;
     color: #fff; 
@@ -220,7 +337,7 @@ input[type="number"]::-webkit-outer-spin-button {
     justify-content: space-between;
     align-items: center;
     padding: 24px 32px;
-    background: rgba(255, 255, 255, 0.6); /* Brighter glass for result highlight */
+    background: rgba(255, 255, 255, 0.6);
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.9);
     border-left: 4px solid #0088cc; 
@@ -260,7 +377,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /* --- THE GLASSY FOOTER --- */
 .site-footer {
-    background: rgba(255, 255, 255, 0.3); /* Transparent white */
+    background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-top: 1px solid rgba(255, 255, 255, 0.5);
@@ -274,7 +391,7 @@ input[type="number"]::-webkit-outer-spin-button {
     justify-content: space-between;
     align-items: center;
     font-size: 0.85rem;
-    color: #444; /* Darker text */
+    color: #444;
     font-weight: 500;
 }
 
@@ -294,6 +411,10 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 @media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
     .inputs-row {
         flex-direction: column; 
         gap: 16px;

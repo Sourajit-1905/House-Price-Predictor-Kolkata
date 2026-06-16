@@ -34,6 +34,10 @@ def get_locations_from_dataset():
 def home():
     return render_template('index.html')
 
+@app.route('/dashboard.html')
+def dashboard():
+    return render_template('dashboard.html')
+
 @app.route('/get_locations', methods=['GET'])
 def get_locations():
     return jsonify({'status': 'success', 'locations': get_locations_from_dataset()})
