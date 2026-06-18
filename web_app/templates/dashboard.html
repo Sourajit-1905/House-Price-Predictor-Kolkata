@@ -11,7 +11,7 @@
 
     <header class="site-header">
         <div class="header-container">
-            <a href="index.html" class="brand-identity" style="text-decoration: none;">
+            <a href="/" class="brand-identity" style="text-decoration: none;">
                 <i class="fa-solid fa-city fa-lg" style="color: rgb(0, 136, 204);"></i>
                 <span class="brand-name">Kolkata House Predictor<span class="accent-text"></span></span>
             </a>
@@ -27,21 +27,21 @@
         <div class="glass-panel page-transition">
             
             <header class="panel-header">
-                <h2>Real-Time Market Valuation Suite</h2>
-                <p>Enterprise-grade predictive modeling engine configured natively for Kolkata's real estate ecosystem.</p>
+                <h2>Kolkata House Valuation Suite</h2>
+                <p>Property price prediction tailored for the Kolkata real estate market.</p>
             </header>
 
             <form id="prediction-form">
                 <div class="inputs-row">
                     
                     <div class="input-group">
-                        <label for="sqft">Built-Up Area (Sq.Ft.)</label>
+                        <label for="sqft">Total Area (Sq.Ft.)</label>
                         <div class="input-wrapper">
                             <input 
                                 type="number" 
                                 id="sqft" 
                                 name="sqft" 
-                                placeholder="e.g., 1450" 
+                                placeholder="Between 100 and 10,000" 
                                 min="100" 
                                 step="1" 
                                 required
@@ -50,13 +50,13 @@
                     </div>
 
                     <div class="input-group">
-                        <label for="bhk">Room Layout (BHK)</label>
+                        <label for="bhk">House Layout (BHK)</label>
                         <div class="input-wrapper">
                             <input 
                                 type="number" 
                                 id="bhk" 
                                 name="bhk" 
-                                placeholder="e.g., 3" 
+                                placeholder="Between 1 and 10" 
                                 min="1" 
                                 max="10" 
                                 step="1" 
@@ -66,7 +66,7 @@
                     </div>
 
                     <div class="input-group">
-                        <label for="location">Target Neighborhood</label>
+                        <label for="location">Preferred Location</label>
                         <div class="input-wrapper">
                             <select id="location" name="location" required>
                                 <option value="" disabled selected>Loading locations...</option>
@@ -82,8 +82,8 @@
 
                 <div id="result-section" class="result-card hidden">
                     <div class="result-meta">
-                        <p class="meta-title">Calculated Valuation Estimate</p>
-                        <p class="meta-subtitle">Based on machine learning tree node feature splits</p>
+                        <p class="meta-title">Predicted Valuation</p>
+                        <p class="meta-subtitle">Predictions based on patterns learned from past property sales</p>
                     </div>
                     <div class="result-valuation">
                         <h2 id="price-output">₹ 0.00 Cr</h2>
@@ -96,11 +96,11 @@
 
     <footer class="site-footer">
         <div class="footer-container">
-            <p>&copy; 2026 KolkataEstates.AI. All algorithmic models proprietary.</p>
+            <p>&copy; 2026 Kolkata House Predictor. By Sourajit Paul of IEMK</p>
             <div class="footer-meta-links">
                 <a href="#">Data Privacy</a>
                 <a href="#">API Specifications</a>
-                <a href="#">Model Architecture</a>
+                <a href="{{ url_for('static', filename='Model_Architecture_Summary.pdf') }}" download>Model Architecture</a>
             </div>
         </div>
     </footer>

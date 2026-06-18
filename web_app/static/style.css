@@ -17,7 +17,6 @@ body {
     flex-direction: column;
 }
 
-/* --- THE GLASSY HEADER --- */
 .site-header {
     background: rgba(255, 255, 255, 0.3); 
     backdrop-filter: blur(16px); 
@@ -84,7 +83,6 @@ body {
     padding: 40px 24px;
 }
 
-/* --- LANDING / HERO WRAPPER (DIRECT BACKGROUND) --- */
 .landing-wrapper {
     flex: 1;
     display: flex;
@@ -143,7 +141,6 @@ body {
     text-shadow: 0 1px 4px rgba(255, 255, 255, 0.5);
 }
 
-/* --- CTA BUTTON --- */
 .cta-btn {
     display: inline-flex;
     align-items: center;
@@ -175,7 +172,6 @@ body {
     transition: transform 0.3s ease;
 }
 
-/* --- THE GLASSY PANEL --- */
 .glass-panel {
     width: 100%;
     max-width: 950px; 
@@ -188,7 +184,6 @@ body {
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1); 
 }
 
-/* --- SMOOTH PAGE LOADING TRANSITIONS --- */
 .animated-element {
     opacity: 0;
     transform: translateY(25px);
@@ -213,7 +208,6 @@ body {
     }
 }
 
-/* --- DASHBOARD SPECIFIC STYLES --- */
 .panel-header {
     margin-bottom: 35px;
     text-align: left;
@@ -375,7 +369,6 @@ input[type="number"]::-webkit-outer-spin-button {
     display: none !important;
 }
 
-/* --- THE GLASSY FOOTER --- */
 .site-footer {
     background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(16px);
