@@ -8,18 +8,15 @@ Kolkata_House_Price_Predictor/
 │   ├── raw/                       # House_Price.csv lives here
 │   └── processed/                 # df_cleaned.csv lives here
 │
-├── ml_core/                       # Replaces 'model/'
-│   ├── artifacts/                 # final_production_model.pkl lives here
-│   └── inference.py               # Your test.py logic, cleanly isolated from the web server
+├── ml_core/                       # final_production_model.pkl lives here
+│   
 │
 ├── web_app/                       # The server application boundary
 │   ├── main.py                    # The Flask or FastAPI server engine
 │   ├── templates/                 # Strict industry standard folder for HTML
 │   │   └── index.html             
 │   └── static/                    # Strict industry standard for public-facing files
-│       ├── css/
 │       │   └── style.css          
-│       ├── js/
 │       │   └── app.js             
 │       └── img/
 │           └── background.jpg     
