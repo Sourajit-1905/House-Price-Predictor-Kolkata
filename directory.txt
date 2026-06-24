@@ -1,24 +1,26 @@
 Kolkata_House_Price_Predictor/
 │
-├── .gitignore                     # Tells Git to ignore large datasets and cache files
-├── requirements.txt               # Locks down your exact Python/scikit-learn versions
-├── README.md                      # Essential documentation for your repository
+├── .gitignore                                      # Tells Git to ignore large datasets and cache files
+├── requirements.txt                                # Locks down your exact Python/scikit-learn versions
+├── README.md                                       # Essential documentation for your repository
 │
-├── dataset/                          # Replaces 'dataset/' (Standardized naming)
-│   ├── raw/                       # House_Price.csv lives here
-│   └── processed/                 # df_cleaned.csv lives here
+├── dataset/                                        # Replaces 'dataset/' (Standardized naming)
+│   ├── raw/                                        # House_Price.csv lives here
+│   └── processed/                                  # df_cleaned.csv lives here
 │
-├── ml_core                      # final_production_model.pkl lives here
+├── ml_core                                         # final_production_model.pkl lives here
 │   
 │
-├── web_app/                       # The server application boundary
-│   ├── main.py                    # The Flask or FastAPI server engine
-│   ├── templates/                 # Strict industry standard folder for HTML
-│   │   └── index.html             
-│   └── static/                    # Strict industry standard for public-facing files
+├── web_app/                                        # The server application boundary
+│   ├── main.py                                     # The Flask or FastAPI server engine
+│   ├── templates/                                  # Industry standard folder for HTML
+│   │   └── index.html                              # The main landing page for the frontend
+    |   └── dashboard.html                          # The dashboard page to conpute the prediction
+│   └── static/                                     # Industry standard for public-facing files
 │       │   └── style.css          
-│       │   └── app.js             
+│       │   └── app.js
+        |   └──Model_Architecture_Summary.pdf       # Summary of the Machine Learning Model      
 │       └── img/
-│           └── background.jpg     
+│           └── background.jpg                      # The background image of the pages
 │
-└── notebooks/                     # Store your exported Google Colab .ipynb files here
+└── notebooks/                                      # Store your exported Google Colab .ipynb files here
