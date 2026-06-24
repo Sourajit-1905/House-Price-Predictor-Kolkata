@@ -1,7 +1,7 @@
-data/raw/
-data/processed/
+dataset/raw/
+dataset/processed/
 
-ml_core/
+ml_core
 
 __pycache__/
 *.py[cod]

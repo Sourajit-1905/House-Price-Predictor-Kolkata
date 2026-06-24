@@ -4,11 +4,11 @@ Kolkata_House_Price_Predictor/
 ├── requirements.txt               # Locks down your exact Python/scikit-learn versions
 ├── README.md                      # Essential documentation for your repository
 │
-├── data/                          # Replaces 'dataset/' (Standardized naming)
+├── dataset/                          # Replaces 'dataset/' (Standardized naming)
 │   ├── raw/                       # House_Price.csv lives here
 │   └── processed/                 # df_cleaned.csv lives here
 │
-├── ml_core/                       # final_production_model.pkl lives here
+├── ml_core                      # final_production_model.pkl lives here
 │   
 │
 ├── web_app/                       # The server application boundary
