@@ -1,12 +1,14 @@
-dataset/raw/
-dataset/processed/
 
-ml_core
+dataset/
+
+ml_core/
+
 
 __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
+
 
 venv/
 env/
@@ -19,6 +21,7 @@ env/
 
 notebooks/.ipynb_checkpoints/
 .ipynb_checkpoints/
+
 
 .vscode/
 .idea/
