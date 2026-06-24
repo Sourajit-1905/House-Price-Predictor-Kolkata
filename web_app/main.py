@@ -7,28 +7,15 @@ from locations import location_names
 
 app = Flask(__name__)
 
-PROJECT_ROOT = r"C:\Users\Biswajit\Desktop\SP49\AI & ML\Projects\Kolkata_House_Price_Predictor"
-MODEL_PATH = os.path.join(PROJECT_ROOT, "ml_core", "final_production_model.pkl")
-DATASET_PATH = os.path.join(PROJECT_ROOT, "data", "House_Price.csv")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, '..', 'ml_core', 'final_production_model.pkl')
 
 if not os.path.exists(MODEL_PATH):
     print(f"CRITICAL ERROR: Model file not found at: {MODEL_PATH}")
-
-    print(f"Directory contents: {os.listdir(os.path.dirname(MODEL_PATH))}")
     exit()
 
 with open(MODEL_PATH, 'rb') as f:
     loaded_model = pickle.load(f)
-
-def get_locations_from_dataset():
-    try:
-        df = pd.read_csv(DATASET_PATH)
-
-        locations = df['Location'].unique().tolist()
-        return sorted([loc for loc in locations if isinstance(loc, str)])
-    except Exception as e:
-        print(f"Error reading dataset: {e}")
-        return location_names
 
 @app.route('/')
 def home():
@@ -40,7 +27,7 @@ def dashboard():
 
 @app.route('/get_locations', methods=['GET'])
 def get_locations():
-    return jsonify({'status': 'success', 'locations': get_locations_from_dataset()})
+    return jsonify({'status': 'success', 'locations': location_names})
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -49,9 +36,9 @@ def predict():
         features = pd.DataFrame([{
             'Total_Sq.ft': float(data['total_sqft']),
             'BHK': float(data['bhk']),
-            'Location': data['location'] 
+            'Location': data['location']
         }])
-        
+
         prediction = loaded_model.predict(features)[0]
         return jsonify({'status': 'success', 'estimated_price_crores': prediction})
     except Exception as e:
