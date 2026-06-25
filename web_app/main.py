@@ -3,6 +3,10 @@ import pickle
 import pandas as pd
 from flask import Flask, request, jsonify, render_template
 
+import sys
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from locations import location_names
 
 app = Flask(__name__)
