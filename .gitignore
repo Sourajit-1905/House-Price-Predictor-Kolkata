@@ -1,9 +1,6 @@
 
 dataset/
 
-ml_core/
-
-
 __pycache__/
 *.py[cod]
 *.pyo
