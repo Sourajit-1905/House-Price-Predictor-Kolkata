@@ -1,6 +1,8 @@
 # Predicting Property Valuations for Kolkata
 
-Machine learning-powered real estate price estimation across Kolkata's neighborhoods.<br>
+Machine learning-powered real estate price estimation across Kolkata's neighborhoods.
+<br>
+
 **Link:** [https://house-price-predictor-kolkata-1.onrender.com/]
 ---
 
